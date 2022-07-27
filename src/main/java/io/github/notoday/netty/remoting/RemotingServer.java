@@ -47,4 +47,12 @@ public interface RemotingServer extends RemotingProcessable {
      * @param resultCallback 结果回调
      */
     void invokeOneway(String login, RemotingCommand request, long timeoutMillis, ResultCallback<Void> resultCallback);
+
+    /**
+     * 检查指定对端是否连接了当前节点
+     *
+     * @param login 目标对端
+     * @return 是否可以通信
+     */
+    boolean isConnected(String login);
 }

@@ -191,6 +191,11 @@ public class NettyRemotingServer extends NettyRemotingAbstract implements Remoti
         super.invokeOnewayImpl(getChannel(login), request, timeoutMillis, resultCallback);
     }
 
+    @Override
+    public boolean isConnected(String login) {
+        return this.channelTable.containsKey(login);
+    }
+
     private Channel getChannel(String login) {
         return this.channelTable.get(login);
     }
