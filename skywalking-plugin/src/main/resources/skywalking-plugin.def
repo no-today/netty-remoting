@@ -1,0 +1,2 @@
+netty-remoting-plugin-0.x=org.apache.skywalking.apm.plugin.NettyRemotingClientInstrumentation
+netty-remoting-plugin-0.x=org.apache.skywalking.apm.plugin.NettyRemotingServerInstrumentation

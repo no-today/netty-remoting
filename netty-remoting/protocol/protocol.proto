@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+import "google/protobuf/any.proto";
+
+option java_package = "io.github.notoday.netty.remoting.protocol.protobuf";
+option java_multiple_files = true;
+
+message RemotingCommandProtobuf {
+  int32 version = 1;
+  int32 reqId = 2;
+  int32 flag = 3;
+  int32 code = 4;
+  optional string remark = 5;
+  optional google.protobuf.Any body = 6;
+  map<string, string> extFields = 7;
+  map<string, string> implicitFields = 8;
+}
+
+message AuthenticationToken {
+  string token = 1;
+  string login = 2;
+}
+
+// protoc --java_out=./src/main/java ./protocol/protocol.proto
