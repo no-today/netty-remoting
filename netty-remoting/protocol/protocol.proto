@@ -13,7 +13,6 @@ message RemotingCommandProtobuf {
   optional string remark = 5;
   optional google.protobuf.Any body = 6;
   map<string, string> extFields = 7;
-  map<string, string> implicitFields = 8;
 }
 
 message AuthenticationToken {

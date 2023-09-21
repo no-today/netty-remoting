@@ -36,7 +36,6 @@ public class RemotingCommand implements Serializable {
     private String remark;
     private byte[] body;
     private Map<String, String> extFields;
-    private Map<String, String> implicitFields;
 
     /**
      * 标记位
@@ -94,7 +93,7 @@ public class RemotingCommand implements Serializable {
     // ------------------------------------------------------------
 
     public static RemotingCommand of(RemotingCommandProtobuf command) {
-        RemotingCommand cmd = new RemotingCommand().setVersion(command.getVersion()).setReqId(command.getReqId()).setFlag(command.getFlag()).setCode(command.getCode()).setRemark(command.getRemark()).setExtFields(command.getExtFieldsMap()).setImplicitFields(command.getImplicitFieldsMap());
+        RemotingCommand cmd = new RemotingCommand().setVersion(command.getVersion()).setReqId(command.getReqId()).setFlag(command.getFlag()).setCode(command.getCode()).setRemark(command.getRemark()).setExtFields(command.getExtFieldsMap());
 
         if (command.hasBody()) {
             // 如果是 bytes, 则还原成字节数组, 否则直接用 protobuf 编码
@@ -132,26 +131,6 @@ public class RemotingCommand implements Serializable {
         return this;
     }
 
-    public String getImplicitFields(String key) {
-        return this.implicitFields == null ? null : this.implicitFields.get(key);
-    }
-
-    public RemotingCommand putImplicitFields(String key, String value) {
-        if (this.implicitFields == null) {
-            this.implicitFields = new HashMap<>();
-        }
-
-        try {
-            this.implicitFields.put(key, value);
-        } catch (UnsupportedOperationException e) {
-            // Collections$UnmodifiableMap
-            this.extFields = new HashMap<>(this.extFields);
-            this.extFields.put(key, value);
-        }
-
-        return this;
-    }
-
     public boolean success() {
         if (!isResponse()) return false;
         return code == RemotingSysResponseCode.SUCCESS;
@@ -177,11 +156,10 @@ public class RemotingCommand implements Serializable {
     }
 
     public RemotingCommandProtobuf protobuf() {
-        RemotingCommandProtobuf.Builder builder = RemotingCommandProtobuf.newBuilder().setReqId(getReqId()).setFlag(getFlag()).setCode(getCode());
+        RemotingCommandProtobuf.Builder builder = RemotingCommandProtobuf.newBuilder().setVersion(getVersion()).setReqId(getReqId()).setFlag(getFlag()).setCode(getCode());
 
         if (getRemark() != null) builder.setRemark(getRemark());
         if (getExtFields() != null) builder.putAllExtFields(getExtFields());
-        if (getImplicitFields() != null) builder.putAllImplicitFields(getImplicitFields());
 
         if (getBody() != null) {
             try {

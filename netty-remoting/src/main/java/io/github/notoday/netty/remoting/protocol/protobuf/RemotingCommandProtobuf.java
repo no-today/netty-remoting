@@ -7,34 +7,60 @@ package io.github.notoday.netty.remoting.protocol.protobuf;
  * Protobuf type {@code RemotingCommandProtobuf}
  */
 public final class RemotingCommandProtobuf extends
-        com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:RemotingCommandProtobuf)
-        RemotingCommandProtobufOrBuilder {
-  public static final int VERSION_FIELD_NUMBER = 1;
-
+    com.google.protobuf.GeneratedMessageV3 implements
+    // @@protoc_insertion_point(message_implements:RemotingCommandProtobuf)
+    RemotingCommandProtobufOrBuilder {
+private static final long serialVersionUID = 0L;
   // Use RemotingCommandProtobuf.newBuilder() to construct.
   private RemotingCommandProtobuf(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-
   private RemotingCommandProtobuf() {
     remark_ = "";
   }
 
-  public static final int REQID_FIELD_NUMBER = 2;
-  public static final int FLAG_FIELD_NUMBER = 3;
-  public static final int CODE_FIELD_NUMBER = 4;
-  public static final int REMARK_FIELD_NUMBER = 5;
-  public static final int BODY_FIELD_NUMBER = 6;
-  public static final int EXTFIELDS_FIELD_NUMBER = 7;
-  public static final int IMPLICITFIELDS_FIELD_NUMBER = 8;
-  private static final long serialVersionUID = 0L;
-  // @@protoc_insertion_point(class_scope:RemotingCommandProtobuf)
-  private static final io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf DEFAULT_INSTANCE;
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new RemotingCommandProtobuf();
+  }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet
+  getUnknownFields() {
+    return this.unknownFields;
+  }
+  public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
+    return io.github.notoday.netty.remoting.protocol.protobuf.Protocol.internal_static_RemotingCommandProtobuf_descriptor;
+  }
+
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(
+      int number) {
+    switch (number) {
+      case 7:
+        return internalGetExtFields();
+      default:
+        throw new RuntimeException(
+            "Invalid map field number: " + number);
+    }
+  }
+  @java.lang.Override
+  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internalGetFieldAccessorTable() {
+    return io.github.notoday.netty.remoting.protocol.protobuf.Protocol.internal_static_RemotingCommandProtobuf_fieldAccessorTable
+        .ensureFieldAccessorsInitialized(
+            io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf.class, io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf.Builder.class);
+  }
+
+  private int bitField0_;
+  public static final int VERSION_FIELD_NUMBER = 1;
+  private int version_ = 0;
   /**
    * <code>int32 version = 1;</code>
-   *
    * @return The version.
    */
   @java.lang.Override
@@ -42,24 +68,10 @@ public final class RemotingCommandProtobuf extends
     return version_;
   }
 
-  private static final com.google.protobuf.Parser<RemotingCommandProtobuf>
-          PARSER = new com.google.protobuf.AbstractParser<RemotingCommandProtobuf>() {
-    @java.lang.Override
-    public RemotingCommandProtobuf parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return new RemotingCommandProtobuf(input, extensionRegistry);
-    }
-  };
-
-  static {
-    DEFAULT_INSTANCE = new io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf();
-  }
-
+  public static final int REQID_FIELD_NUMBER = 2;
+  private int reqId_ = 0;
   /**
    * <code>int32 reqId = 2;</code>
-   *
    * @return The reqId.
    */
   @java.lang.Override
@@ -67,12 +79,10 @@ public final class RemotingCommandProtobuf extends
     return reqId_;
   }
 
-  private int bitField0_;
-  private int version_;
-
+  public static final int FLAG_FIELD_NUMBER = 3;
+  private int flag_ = 0;
   /**
    * <code>int32 flag = 3;</code>
-   *
    * @return The flag.
    */
   @java.lang.Override
@@ -80,12 +90,10 @@ public final class RemotingCommandProtobuf extends
     return flag_;
   }
 
-  private int reqId_;
-  private int flag_;
-
+  public static final int CODE_FIELD_NUMBER = 4;
+  private int code_ = 0;
   /**
    * <code>int32 code = 4;</code>
-   *
    * @return The code.
    */
   @java.lang.Override
@@ -93,46 +101,71 @@ public final class RemotingCommandProtobuf extends
     return code_;
   }
 
-  private int code_;
-  private volatile java.lang.Object remark_;
-
+  public static final int REMARK_FIELD_NUMBER = 5;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object remark_ = "";
   /**
    * <code>optional string remark = 5;</code>
-   *
    * @return Whether the remark field is set.
    */
   @java.lang.Override
   public boolean hasRemark() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+  /**
+   * <code>optional string remark = 5;</code>
+   * @return The remark.
+   */
+  @java.lang.Override
+  public java.lang.String getRemark() {
+    java.lang.Object ref = remark_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      remark_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>optional string remark = 5;</code>
+   * @return The bytes for remark.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getRemarkBytes() {
+    java.lang.Object ref = remark_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      remark_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
 
+  public static final int BODY_FIELD_NUMBER = 6;
   private com.google.protobuf.Any body_;
-  private com.google.protobuf.MapField<
-          java.lang.String, java.lang.String> extFields_;
-  private com.google.protobuf.MapField<
-          java.lang.String, java.lang.String> implicitFields_;
-  private byte memoizedIsInitialized = -1;
-
   /**
    * <code>optional .google.protobuf.Any body = 6;</code>
-   *
    * @return Whether the body field is set.
    */
   @java.lang.Override
   public boolean hasBody() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    * <code>optional .google.protobuf.Any body = 6;</code>
-   *
    * @return The body.
    */
   @java.lang.Override
   public com.google.protobuf.Any getBody() {
     return body_ == null ? com.google.protobuf.Any.getDefaultInstance() : body_;
   }
-
   /**
    * <code>optional .google.protobuf.Any body = 6;</code>
    */
@@ -141,138 +174,41 @@ public final class RemotingCommandProtobuf extends
     return body_ == null ? com.google.protobuf.Any.getDefaultInstance() : body_;
   }
 
-  private RemotingCommandProtobuf(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
+  public static final int EXTFIELDS_FIELD_NUMBER = 7;
+  private static final class ExtFieldsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+        java.lang.String, java.lang.String> defaultEntry =
+            com.google.protobuf.MapEntry
+            .<java.lang.String, java.lang.String>newDefaultInstance(
+                io.github.notoday.netty.remoting.protocol.protobuf.Protocol.internal_static_RemotingCommandProtobuf_ExtFieldsEntry_descriptor, 
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "");
+  }
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<
+      java.lang.String, java.lang.String> extFields_;
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+  internalGetExtFields() {
+    if (extFields_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          ExtFieldsDefaultEntryHolder.defaultEntry);
     }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8: {
-
-            version_ = input.readInt32();
-            break;
-          }
-          case 16: {
-
-            reqId_ = input.readInt32();
-            break;
-          }
-          case 24: {
-
-            flag_ = input.readInt32();
-            break;
-          }
-          case 32: {
-
-            code_ = input.readInt32();
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-            bitField0_ |= 0x00000001;
-            remark_ = s;
-            break;
-          }
-          case 50: {
-            com.google.protobuf.Any.Builder subBuilder = null;
-            if (((bitField0_ & 0x00000002) != 0)) {
-              subBuilder = body_.toBuilder();
-            }
-            body_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(body_);
-              body_ = subBuilder.buildPartial();
-            }
-            bitField0_ |= 0x00000002;
-            break;
-          }
-          case 58: {
-            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-              extFields_ = com.google.protobuf.MapField.newMapField(
-                      ExtFieldsDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000004;
-            }
-            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-                    extFields__ = input.readMessage(
-                    ExtFieldsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            extFields_.getMutableMap().put(
-                    extFields__.getKey(), extFields__.getValue());
-            break;
-          }
-          case 66: {
-            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-              implicitFields_ = com.google.protobuf.MapField.newMapField(
-                      ImplicitFieldsDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000008;
-            }
-            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-                    implicitFields__ = input.readMessage(
-                    ImplicitFieldsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            implicitFields_.getMutableMap().put(
-                    implicitFields__.getKey(), implicitFields__.getValue());
-            break;
-          }
-          default: {
-            if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
+    return extFields_;
   }
-
-  public static final com.google.protobuf.Descriptors.Descriptor
-  getDescriptor() {
-    return io.github.notoday.netty.remoting.protocol.protobuf.Protocol.internal_static_RemotingCommandProtobuf_descriptor;
-  }
-
-  public static io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf parseFrom(
-          java.nio.ByteBuffer data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-
-  public static io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf parseFrom(
-          java.nio.ByteBuffer data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
-
   public int getExtFieldsCount() {
     return internalGetExtFields().getMap().size();
   }
-
-  public static io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
+  /**
+   * <code>map&lt;string, string&gt; extFields = 7;</code>
+   */
+  @java.lang.Override
+  public boolean containsExtFields(
+      java.lang.String key) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    return internalGetExtFields().getMap().containsKey(key);
   }
-
   /**
    * Use {@link #getExtFieldsMap()} instead.
    */
@@ -281,94 +217,43 @@ public final class RemotingCommandProtobuf extends
   public java.util.Map<java.lang.String, java.lang.String> getExtFields() {
     return getExtFieldsMap();
   }
-
   /**
    * <code>map&lt;string, string&gt; extFields = 7;</code>
    */
   @java.lang.Override
-
   public java.util.Map<java.lang.String, java.lang.String> getExtFieldsMap() {
     return internalGetExtFields().getMap();
   }
-
-  public static io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
+  /**
+   * <code>map&lt;string, string&gt; extFields = 7;</code>
+   */
+  @java.lang.Override
+  public /* nullable */
+java.lang.String getExtFieldsOrDefault(
+      java.lang.String key,
+      /* nullable */
+java.lang.String defaultValue) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetExtFields().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   * <code>map&lt;string, string&gt; extFields = 7;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getExtFieldsOrThrow(
+      java.lang.String key) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetExtFields().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
   }
 
-  public static io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-
-  public static io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
-
-  public static io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-  }
-
-  public static io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public static io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
-  }
-
-  public static io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public static io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-  }
-
-  public static io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-
-  public static Builder newBuilder(io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-
-  public static io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf getDefaultInstance() {
-    return DEFAULT_INSTANCE;
-  }
-
-  public static com.google.protobuf.Parser<RemotingCommandProtobuf> parser() {
-    return PARSER;
-  }
-
+  private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -380,216 +265,8 @@ public final class RemotingCommandProtobuf extends
   }
 
   @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
-          UnusedPrivateParameter unused) {
-    return new RemotingCommandProtobuf();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
-
-  @SuppressWarnings({"rawtypes"})
-  @java.lang.Override
-  protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
-    switch (number) {
-      case 7:
-        return internalGetExtFields();
-      case 8:
-        return internalGetImplicitFields();
-      default:
-        throw new RuntimeException(
-                "Invalid map field number: " + number);
-    }
-  }
-
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-  internalGetFieldAccessorTable() {
-    return io.github.notoday.netty.remoting.protocol.protobuf.Protocol.internal_static_RemotingCommandProtobuf_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                    io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf.class, io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf.Builder.class);
-  }
-
-  /**
-   * <code>optional string remark = 5;</code>
-   * @return The remark.
-   */
-  @java.lang.Override
-  public java.lang.String getRemark() {
-    java.lang.Object ref = remark_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs =
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      remark_ = s;
-      return s;
-    }
-  }
-
-  /**
-   * <code>optional string remark = 5;</code>
-   *
-   * @return The bytes for remark.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-  getRemarkBytes() {
-    java.lang.Object ref = remark_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8(
-                      (java.lang.String) ref);
-      remark_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-  internalGetExtFields() {
-    if (extFields_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(
-              ExtFieldsDefaultEntryHolder.defaultEntry);
-    }
-    return extFields_;
-  }
-
-  /**
-   * <code>map&lt;string, string&gt; extFields = 7;</code>
-   */
-
-  @java.lang.Override
-  public boolean containsExtFields(
-          java.lang.String key) {
-    if (key == null) {
-      throw new NullPointerException("map key");
-    }
-    return internalGetExtFields().getMap().containsKey(key);
-  }
-
-  /**
-   * <code>map&lt;string, string&gt; extFields = 7;</code>
-   */
-  @java.lang.Override
-
-  public java.lang.String getExtFieldsOrDefault(
-          java.lang.String key,
-          java.lang.String defaultValue) {
-    if (key == null) {
-      throw new NullPointerException("map key");
-    }
-    java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetExtFields().getMap();
-    return map.containsKey(key) ? map.get(key) : defaultValue;
-  }
-
-  /**
-   * <code>map&lt;string, string&gt; extFields = 7;</code>
-   */
-  @java.lang.Override
-
-  public java.lang.String getExtFieldsOrThrow(
-          java.lang.String key) {
-    if (key == null) {
-      throw new NullPointerException("map key");
-    }
-    java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetExtFields().getMap();
-    if (!map.containsKey(key)) {
-      throw new java.lang.IllegalArgumentException();
-    }
-    return map.get(key);
-  }
-
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-  internalGetImplicitFields() {
-    if (implicitFields_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(
-              ImplicitFieldsDefaultEntryHolder.defaultEntry);
-    }
-    return implicitFields_;
-  }
-
-  public int getImplicitFieldsCount() {
-    return internalGetImplicitFields().getMap().size();
-  }
-
-  /**
-   * <code>map&lt;string, string&gt; implicitFields = 8;</code>
-   */
-
-  @java.lang.Override
-  public boolean containsImplicitFields(
-          java.lang.String key) {
-    if (key == null) {
-      throw new NullPointerException("map key");
-    }
-    return internalGetImplicitFields().getMap().containsKey(key);
-  }
-
-  /**
-   * Use {@link #getImplicitFieldsMap()} instead.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public java.util.Map<java.lang.String, java.lang.String> getImplicitFields() {
-    return getImplicitFieldsMap();
-  }
-
-  /**
-   * <code>map&lt;string, string&gt; implicitFields = 8;</code>
-   */
-  @java.lang.Override
-
-  public java.util.Map<java.lang.String, java.lang.String> getImplicitFieldsMap() {
-    return internalGetImplicitFields().getMap();
-  }
-
-  /**
-   * <code>map&lt;string, string&gt; implicitFields = 8;</code>
-   */
-  @java.lang.Override
-
-  public java.lang.String getImplicitFieldsOrDefault(
-          java.lang.String key,
-          java.lang.String defaultValue) {
-    if (key == null) {
-      throw new NullPointerException("map key");
-    }
-    java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetImplicitFields().getMap();
-    return map.containsKey(key) ? map.get(key) : defaultValue;
-  }
-
-  /**
-   * <code>map&lt;string, string&gt; implicitFields = 8;</code>
-   */
-  @java.lang.Override
-
-  public java.lang.String getImplicitFieldsOrThrow(
-          java.lang.String key) {
-    if (key == null) {
-      throw new NullPointerException("map key");
-    }
-    java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetImplicitFields().getMap();
-    if (!map.containsKey(key)) {
-      throw new java.lang.IllegalArgumentException();
-    }
-    return map.get(key);
-  }
-
-  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
-          throws java.io.IOException {
+                      throws java.io.IOException {
     if (version_ != 0) {
       output.writeInt32(1, version_);
     }
@@ -609,18 +286,12 @@ public final class RemotingCommandProtobuf extends
       output.writeMessage(6, getBody());
     }
     com.google.protobuf.GeneratedMessageV3
-            .serializeStringMapTo(
-                    output,
-                    internalGetExtFields(),
-                    ExtFieldsDefaultEntryHolder.defaultEntry,
-                    7);
-    com.google.protobuf.GeneratedMessageV3
-            .serializeStringMapTo(
-                    output,
-                    internalGetImplicitFields(),
-        ImplicitFieldsDefaultEntryHolder.defaultEntry,
-        8);
-    unknownFields.writeTo(output);
+      .serializeStringMapTo(
+        output,
+        internalGetExtFields(),
+        ExtFieldsDefaultEntryHolder.defaultEntry,
+        7);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -631,15 +302,15 @@ public final class RemotingCommandProtobuf extends
     size = 0;
     if (version_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-              .computeInt32Size(1, version_);
+        .computeInt32Size(1, version_);
     }
     if (reqId_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-              .computeInt32Size(2, reqId_);
+        .computeInt32Size(2, reqId_);
     }
     if (flag_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-              .computeInt32Size(3, flag_);
+        .computeInt32Size(3, flag_);
     }
     if (code_ != 0) {
       size += com.google.protobuf.CodedOutputStream
@@ -650,29 +321,19 @@ public final class RemotingCommandProtobuf extends
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-              .computeMessageSize(6, getBody());
+        .computeMessageSize(6, getBody());
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-            : internalGetExtFields().getMap().entrySet()) {
+         : internalGetExtFields().getMap().entrySet()) {
       com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-              extFields__ = ExtFieldsDefaultEntryHolder.defaultEntry.newBuilderForType()
-              .setKey(entry.getKey())
-              .setValue(entry.getValue())
-              .build();
+      extFields__ = ExtFieldsDefaultEntryHolder.defaultEntry.newBuilderForType()
+          .setKey(entry.getKey())
+          .setValue(entry.getValue())
+          .build();
       size += com.google.protobuf.CodedOutputStream
-              .computeMessageSize(7, extFields__);
+          .computeMessageSize(7, extFields__);
     }
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-            : internalGetImplicitFields().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-              implicitFields__ = ImplicitFieldsDefaultEntryHolder.defaultEntry.newBuilderForType()
-              .setKey(entry.getKey())
-              .setValue(entry.getValue())
-              .build();
-      size += com.google.protobuf.CodedOutputStream
-              .computeMessageSize(8, implicitFields__);
-    }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -688,28 +349,27 @@ public final class RemotingCommandProtobuf extends
     io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf other = (io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf) obj;
 
     if (getVersion()
-            != other.getVersion()) return false;
+        != other.getVersion()) return false;
     if (getReqId()
-            != other.getReqId()) return false;
+        != other.getReqId()) return false;
     if (getFlag()
-            != other.getFlag()) return false;
+        != other.getFlag()) return false;
     if (getCode()
-            != other.getCode()) return false;
+        != other.getCode()) return false;
     if (hasRemark() != other.hasRemark()) return false;
     if (hasRemark()) {
       if (!getRemark()
-              .equals(other.getRemark())) return false;
+          .equals(other.getRemark())) return false;
     }
     if (hasBody() != other.hasBody()) return false;
     if (hasBody()) {
       if (!getBody()
-              .equals(other.getBody())) return false;
+          .equals(other.getBody())) return false;
     }
     if (!internalGetExtFields().equals(
-            other.internalGetExtFields())) return false;
-    if (!internalGetImplicitFields().equals(
-        other.internalGetImplicitFields())) return false;
-    return unknownFields.equals(other.unknownFields);
+        other.internalGetExtFields())) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -739,24 +399,93 @@ public final class RemotingCommandProtobuf extends
       hash = (37 * hash) + EXTFIELDS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetExtFields().hashCode();
     }
-    if (!internalGetImplicitFields().getMap().isEmpty()) {
-      hash = (37 * hash) + IMPLICITFIELDS_FIELD_NUMBER;
-      hash = (53 * hash) + internalGetImplicitFields().hashCode();
-    }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  @java.lang.Override
-  public Builder newBuilderForType() {
-    return newBuilder();
+  public static io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf parseFrom(
+      java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf parseFrom(
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
+  public static io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf parseFrom(
+      com.google.protobuf.ByteString data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf parseFrom(
+      com.google.protobuf.ByteString data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
+  public static io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf parseFrom(byte[] data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf parseFrom(
+      byte[] data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
+  public static io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf parseFrom(java.io.InputStream input)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
+  }
+  public static io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf parseFrom(
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
+  }
+  public static io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf parseDelimitedFrom(java.io.InputStream input)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input);
+  }
+  public static io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf parseDelimitedFrom(
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+  }
+  public static io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf parseFrom(
+      com.google.protobuf.CodedInputStream input)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
+  }
+  public static io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf parseFrom(
+      com.google.protobuf.CodedInputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
+  public Builder newBuilderForType() { return newBuilder(); }
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+  public static Builder newBuilder(io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
+        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
@@ -765,65 +494,87 @@ public final class RemotingCommandProtobuf extends
     Builder builder = new Builder(parent);
     return builder;
   }
-
-  @java.lang.Override
-  public com.google.protobuf.Parser<RemotingCommandProtobuf> getParserForType() {
-    return PARSER;
-  }
-
-  @java.lang.Override
-  public io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf getDefaultInstanceForType() {
-    return DEFAULT_INSTANCE;
-  }
-
-  private static final class ExtFieldsDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-            java.lang.String, java.lang.String> defaultEntry =
-            com.google.protobuf.MapEntry
-                    .newDefaultInstance(
-                            io.github.notoday.netty.remoting.protocol.protobuf.Protocol.internal_static_RemotingCommandProtobuf_ExtFieldsEntry_descriptor,
-                            com.google.protobuf.WireFormat.FieldType.STRING,
-                            "",
-                            com.google.protobuf.WireFormat.FieldType.STRING,
-                            "");
-  }
-
-  private static final class ImplicitFieldsDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-            java.lang.String, java.lang.String> defaultEntry =
-            com.google.protobuf.MapEntry
-                    .newDefaultInstance(
-                            io.github.notoday.netty.remoting.protocol.protobuf.Protocol.internal_static_RemotingCommandProtobuf_ImplicitFieldsEntry_descriptor,
-                            com.google.protobuf.WireFormat.FieldType.STRING,
-                            "",
-                            com.google.protobuf.WireFormat.FieldType.STRING,
-                            "");
-  }
-
   /**
    * Protobuf type {@code RemotingCommandProtobuf}
    */
   public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:RemotingCommandProtobuf)
-          io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobufOrBuilder {
-    private int bitField0_;
-    private int version_;
-    private int reqId_;
-    private int flag_;
-    private int code_;
-    private java.lang.Object remark_ = "";
+      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+      // @@protoc_insertion_point(builder_implements:RemotingCommandProtobuf)
+      io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobufOrBuilder {
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.github.notoday.netty.remoting.protocol.protobuf.Protocol.internal_static_RemotingCommandProtobuf_descriptor;
+    }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 7:
+          return internalGetExtFields();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(
+        int number) {
+      switch (number) {
+        case 7:
+          return internalGetMutableExtFields();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.github.notoday.netty.remoting.protocol.protobuf.Protocol.internal_static_RemotingCommandProtobuf_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf.class, io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf.Builder.class);
+    }
+
+    // Construct using io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf.newBuilder()
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
+
+    private Builder(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      super(parent);
+      maybeForceBuilderInitialization();
+    }
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
         getBodyFieldBuilder();
       }
     }
+    @java.lang.Override
+    public Builder clear() {
+      super.clear();
+      bitField0_ = 0;
+      version_ = 0;
+      reqId_ = 0;
+      flag_ = 0;
+      code_ = 0;
+      remark_ = "";
+      body_ = null;
+      if (bodyBuilder_ != null) {
+        bodyBuilder_.dispose();
+        bodyBuilder_ = null;
+      }
+      internalGetMutableExtFields().clear();
+      return this;
+    }
 
-    private com.google.protobuf.Any body_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> bodyBuilder_;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor
+        getDescriptorForType() {
+      return io.github.notoday.netty.remoting.protocol.protobuf.Protocol.internal_static_RemotingCommandProtobuf_descriptor;
+    }
 
     @java.lang.Override
     public io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf getDefaultInstanceForType() {
@@ -839,210 +590,90 @@ public final class RemotingCommandProtobuf extends
       return result;
     }
 
-    private com.google.protobuf.MapField<
-            java.lang.String, java.lang.String> extFields_;
+    @java.lang.Override
+    public io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf buildPartial() {
+      io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf result = new io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf(this);
+      if (bitField0_ != 0) { buildPartial0(result); }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.version_ = version_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.reqId_ = reqId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.flag_ = flag_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.code_ = code_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.remark_ = remark_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.body_ = bodyBuilder_ == null
+            ? body_
+            : bodyBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.extFields_ = internalGetExtFields();
+        result.extFields_.makeImmutable();
+      }
+      result.bitField0_ |= to_bitField0_;
+    }
 
     @java.lang.Override
     public Builder clone() {
       return super.clone();
     }
-
-    private com.google.protobuf.MapField<
-            java.lang.String, java.lang.String> implicitFields_;
-
-    // Construct using io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
-
-    private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    public static final com.google.protobuf.Descriptors.Descriptor
-    getDescriptor() {
-      return io.github.notoday.netty.remoting.protocol.protobuf.Protocol.internal_static_RemotingCommandProtobuf_descriptor;
-    }
-
-    @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(
-            int number) {
-      switch (number) {
-        case 7:
-          return internalGetExtFields();
-        case 8:
-          return internalGetImplicitFields();
-        default:
-          throw new RuntimeException(
-                  "Invalid map field number: " + number);
-      }
-    }
-
-    @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMutableMapField(
-            int number) {
-      switch (number) {
-        case 7:
-          return internalGetMutableExtFields();
-        case 8:
-          return internalGetMutableImplicitFields();
-        default:
-          throw new RuntimeException(
-                  "Invalid map field number: " + number);
-      }
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-    internalGetFieldAccessorTable() {
-      return io.github.notoday.netty.remoting.protocol.protobuf.Protocol.internal_static_RemotingCommandProtobuf_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                      io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf.class, io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf.Builder.class);
-    }
-
-    @java.lang.Override
-    public final boolean isInitialized() {
-      return true;
-    }
-
-    @java.lang.Override
-    public Builder clear() {
-      super.clear();
-      version_ = 0;
-
-      reqId_ = 0;
-
-      flag_ = 0;
-
-      code_ = 0;
-
-      remark_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (bodyBuilder_ == null) {
-        body_ = null;
-      } else {
-        bodyBuilder_.clear();
-      }
-      bitField0_ = (bitField0_ & ~0x00000002);
-      internalGetMutableExtFields().clear();
-      internalGetMutableImplicitFields().clear();
-      return this;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-    getDescriptorForType() {
-      return io.github.notoday.netty.remoting.protocol.protobuf.Protocol.internal_static_RemotingCommandProtobuf_descriptor;
-    }
-
-    @java.lang.Override
-    public io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf buildPartial() {
-      io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf result = new io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.version_ = version_;
-      result.reqId_ = reqId_;
-      result.flag_ = flag_;
-      result.code_ = code_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
-      }
-      result.remark_ = remark_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        if (bodyBuilder_ == null) {
-          result.body_ = body_;
-        } else {
-          result.body_ = bodyBuilder_.build();
-        }
-        to_bitField0_ |= 0x00000002;
-      }
-      result.extFields_ = internalGetExtFields();
-      result.extFields_.makeImmutable();
-      result.implicitFields_ = internalGetImplicitFields();
-      result.implicitFields_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
-    }
-
-    /**
-     * <code>int32 version = 1;</code>
-     *
-     * @return The version.
-     */
-    @java.lang.Override
-    public int getVersion() {
-      return version_;
-    }
-
     @java.lang.Override
     public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return super.setField(field, value);
     }
-
     @java.lang.Override
     public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
+        com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-
     @java.lang.Override
     public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-
-    /**
-     * <code>int32 reqId = 2;</code>
-     *
-     * @return The reqId.
-     */
-    @java.lang.Override
-    public int getReqId() {
-      return reqId_;
-    }
-
     @java.lang.Override
     public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
-
     @java.lang.Override
     public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
-
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf) {
-        return mergeFrom((io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf) other);
+        return mergeFrom((io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    /**
-     * <code>int32 flag = 3;</code>
-     *
-     * @return The flag.
-     */
-    @java.lang.Override
-    public int getFlag() {
-      return flag_;
-    }
-
     public Builder mergeFrom(io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf other) {
-      if (other == io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf.getDefaultInstance())
-        return this;
+      if (other == io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf.getDefaultInstance()) return this;
       if (other.getVersion() != 0) {
         setVersion(other.getVersion());
       }
@@ -1056,166 +687,236 @@ public final class RemotingCommandProtobuf extends
         setCode(other.getCode());
       }
       if (other.hasRemark()) {
-        bitField0_ |= 0x00000001;
         remark_ = other.remark_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasBody()) {
         mergeBody(other.getBody());
       }
       internalGetMutableExtFields().mergeFrom(
-              other.internalGetExtFields());
-      internalGetMutableImplicitFields().mergeFrom(
-              other.internalGetImplicitFields());
-      this.mergeUnknownFields(other.unknownFields);
+          other.internalGetExtFields());
+      bitField0_ |= 0x00000040;
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
+    }
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      return true;
     }
 
     @java.lang.Override
     public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-      io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf parsedMessage = null;
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              version_ = input.readInt32();
+              bitField0_ |= 0x00000001;
+              break;
+            } // case 8
+            case 16: {
+              reqId_ = input.readInt32();
+              bitField0_ |= 0x00000002;
+              break;
+            } // case 16
+            case 24: {
+              flag_ = input.readInt32();
+              bitField0_ |= 0x00000004;
+              break;
+            } // case 24
+            case 32: {
+              code_ = input.readInt32();
+              bitField0_ |= 0x00000008;
+              break;
+            } // case 32
+            case 42: {
+              remark_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000010;
+              break;
+            } // case 42
+            case 50: {
+              input.readMessage(
+                  getBodyFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000020;
+              break;
+            } // case 50
+            case 58: {
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              extFields__ = input.readMessage(
+                  ExtFieldsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              internalGetMutableExtFields().getMutableMap().put(
+                  extFields__.getKey(), extFields__.getValue());
+              bitField0_ |= 0x00000040;
+              break;
+            } // case 58
+            default: {
+              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                done = true; // was an endgroup tag
+              }
+              break;
+            } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
+    private int bitField0_;
 
+    private int version_ ;
     /**
      * <code>int32 version = 1;</code>
-     *
+     * @return The version.
+     */
+    @java.lang.Override
+    public int getVersion() {
+      return version_;
+    }
+    /**
+     * <code>int32 version = 1;</code>
      * @param value The version to set.
      * @return This builder for chaining.
      */
     public Builder setVersion(int value) {
-
+      
       version_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
-
-    /**
-     * <code>int32 code = 4;</code>
-     *
-     * @return The code.
-     */
-    @java.lang.Override
-    public int getCode() {
-      return code_;
-    }
-
     /**
      * <code>int32 version = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       version_ = 0;
       onChanged();
       return this;
     }
 
+    private int reqId_ ;
+    /**
+     * <code>int32 reqId = 2;</code>
+     * @return The reqId.
+     */
+    @java.lang.Override
+    public int getReqId() {
+      return reqId_;
+    }
     /**
      * <code>int32 reqId = 2;</code>
      * @param value The reqId to set.
      * @return This builder for chaining.
      */
     public Builder setReqId(int value) {
-
+      
       reqId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
-
     /**
      * <code>int32 reqId = 2;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearReqId() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       reqId_ = 0;
       onChanged();
       return this;
     }
-    /**
-     * <code>optional string remark = 5;</code>
-     * @return Whether the remark field is set.
-     */
-    public boolean hasRemark() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
 
+    private int flag_ ;
+    /**
+     * <code>int32 flag = 3;</code>
+     * @return The flag.
+     */
+    @java.lang.Override
+    public int getFlag() {
+      return flag_;
+    }
     /**
      * <code>int32 flag = 3;</code>
      * @param value The flag to set.
      * @return This builder for chaining.
      */
     public Builder setFlag(int value) {
-
+      
       flag_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
-
     /**
      * <code>int32 flag = 3;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearFlag() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       flag_ = 0;
       onChanged();
       return this;
     }
 
+    private int code_ ;
     /**
      * <code>int32 code = 4;</code>
-     *
+     * @return The code.
+     */
+    @java.lang.Override
+    public int getCode() {
+      return code_;
+    }
+    /**
+     * <code>int32 code = 4;</code>
      * @param value The code to set.
      * @return This builder for chaining.
      */
     public Builder setCode(int value) {
-
+      
       code_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
-
-    /**
-     * <code>optional string remark = 5;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearRemark() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      remark_ = getDefaultInstance().getRemark();
-      onChanged();
-      return this;
-    }
-
     /**
      * <code>int32 code = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearCode() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       code_ = 0;
       onChanged();
       return this;
     }
 
+    private java.lang.Object remark_ = "";
+    /**
+     * <code>optional string remark = 5;</code>
+     * @return Whether the remark field is set.
+     */
+    public boolean hasRemark() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
     /**
      * <code>optional string remark = 5;</code>
      * @return The remark.
@@ -1224,7 +925,7 @@ public final class RemotingCommandProtobuf extends
       java.lang.Object ref = remark_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
+            (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         remark_ = s;
         return s;
@@ -1232,36 +933,73 @@ public final class RemotingCommandProtobuf extends
         return (java.lang.String) ref;
       }
     }
-
     /**
      * <code>optional string remark = 5;</code>
-     *
+     * @return The bytes for remark.
+     */
+    public com.google.protobuf.ByteString
+        getRemarkBytes() {
+      java.lang.Object ref = remark_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        remark_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string remark = 5;</code>
      * @param value The remark to set.
      * @return This builder for chaining.
      */
     public Builder setRemark(
-            java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
       remark_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string remark = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRemark() {
+      remark_ = getDefaultInstance().getRemark();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string remark = 5;</code>
+     * @param value The bytes for remark to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRemarkBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      remark_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
 
+    private com.google.protobuf.Any body_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> bodyBuilder_;
     /**
      * <code>optional .google.protobuf.Any body = 6;</code>
-     *
      * @return Whether the body field is set.
      */
     public boolean hasBody() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      * <code>optional .google.protobuf.Any body = 6;</code>
-     *
      * @return The body.
      */
     public com.google.protobuf.Any getBody() {
@@ -1271,7 +1009,6 @@ public final class RemotingCommandProtobuf extends
         return bodyBuilder_.getMessage();
       }
     }
-
     /**
      * <code>optional .google.protobuf.Any body = 6;</code>
      */
@@ -1281,110 +1018,67 @@ public final class RemotingCommandProtobuf extends
           throw new NullPointerException();
         }
         body_ = value;
-        onChanged();
       } else {
         bodyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
-      return this;
-    }
-
-    /**
-     * <code>optional string remark = 5;</code>
-     *
-     * @return The bytes for remark.
-     */
-    public com.google.protobuf.ByteString
-    getRemarkBytes() {
-      java.lang.Object ref = remark_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-                com.google.protobuf.ByteString.copyFromUtf8(
-                        (java.lang.String) ref);
-        remark_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    /**
-     * <code>optional string remark = 5;</code>
-     *
-     * @param value The bytes for remark to set.
-     * @return This builder for chaining.
-     */
-    public Builder setRemarkBytes(
-            com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
-      remark_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
-
-    /**
-     * <code>optional .google.protobuf.Any body = 6;</code>
-     */
-    public Builder clearBody() {
-      if (bodyBuilder_ == null) {
-        body_ = null;
-        onChanged();
-      } else {
-        bodyBuilder_.clear();
-      }
-      bitField0_ = (bitField0_ & ~0x00000002);
-      return this;
-    }
-
-    /**
-     * <code>optional .google.protobuf.Any body = 6;</code>
-     */
-    public com.google.protobuf.Any.Builder getBodyBuilder() {
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return getBodyFieldBuilder().getBuilder();
-    }
-
     /**
      * <code>optional .google.protobuf.Any body = 6;</code>
      */
     public Builder setBody(
-            com.google.protobuf.Any.Builder builderForValue) {
+        com.google.protobuf.Any.Builder builderForValue) {
       if (bodyBuilder_ == null) {
         body_ = builderForValue.build();
-        onChanged();
       } else {
         bodyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
-
     /**
      * <code>optional .google.protobuf.Any body = 6;</code>
      */
     public Builder mergeBody(com.google.protobuf.Any value) {
       if (bodyBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0) &&
-            body_ != null &&
-            body_ != com.google.protobuf.Any.getDefaultInstance()) {
-          body_ =
-            com.google.protobuf.Any.newBuilder(body_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0) &&
+          body_ != null &&
+          body_ != com.google.protobuf.Any.getDefaultInstance()) {
+          getBodyBuilder().mergeFrom(value);
         } else {
           body_ = value;
         }
-        onChanged();
       } else {
         bodyBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
-
+    /**
+     * <code>optional .google.protobuf.Any body = 6;</code>
+     */
+    public Builder clearBody() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      body_ = null;
+      if (bodyBuilder_ != null) {
+        bodyBuilder_.dispose();
+        bodyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .google.protobuf.Any body = 6;</code>
+     */
+    public com.google.protobuf.Any.Builder getBodyBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return getBodyFieldBuilder().getBuilder();
+    }
     /**
      * <code>optional .google.protobuf.Any body = 6;</code>
      */
@@ -1393,19 +1087,18 @@ public final class RemotingCommandProtobuf extends
         return bodyBuilder_.getMessageOrBuilder();
       } else {
         return body_ == null ?
-                com.google.protobuf.Any.getDefaultInstance() : body_;
+            com.google.protobuf.Any.getDefaultInstance() : body_;
       }
     }
-
     /**
      * <code>optional .google.protobuf.Any body = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>
-    getBodyFieldBuilder() {
+        com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+        getBodyFieldBuilder() {
       if (bodyBuilder_ == null) {
         bodyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+            com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
                 getBody(),
                 getParentForChildren(),
                 isClean());
@@ -1414,32 +1107,41 @@ public final class RemotingCommandProtobuf extends
       return bodyBuilder_;
     }
 
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> extFields_;
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetExtFields() {
+        internalGetExtFields() {
       if (extFields_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
-                ExtFieldsDefaultEntryHolder.defaultEntry);
+            ExtFieldsDefaultEntryHolder.defaultEntry);
       }
       return extFields_;
     }
-
-    public int getExtFieldsCount() {
-      return internalGetExtFields().getMap().size();
-    }
-
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableExtFields() {
-      onChanged();
+        internalGetMutableExtFields() {
       if (extFields_ == null) {
         extFields_ = com.google.protobuf.MapField.newMapField(
-                ExtFieldsDefaultEntryHolder.defaultEntry);
+            ExtFieldsDefaultEntryHolder.defaultEntry);
       }
       if (!extFields_.isMutable()) {
         extFields_ = extFields_.copy();
       }
+      bitField0_ |= 0x00000040;
+      onChanged();
       return extFields_;
     }
-
+    public int getExtFieldsCount() {
+      return internalGetExtFields().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, string&gt; extFields = 7;</code>
+     */
+    @java.lang.Override
+    public boolean containsExtFields(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      return internalGetExtFields().getMap().containsKey(key);
+    }
     /**
      * Use {@link #getExtFieldsMap()} instead.
      */
@@ -1448,267 +1150,87 @@ public final class RemotingCommandProtobuf extends
     public java.util.Map<java.lang.String, java.lang.String> getExtFields() {
       return getExtFieldsMap();
     }
-
     /**
      * <code>map&lt;string, string&gt; extFields = 7;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.String, java.lang.String> getExtFieldsMap() {
       return internalGetExtFields().getMap();
     }
-
-    /**
-     * <code>map&lt;string, string&gt; extFields = 7;</code>
-     */
-
-    @java.lang.Override
-    public boolean containsExtFields(
-            java.lang.String key) {
-      if (key == null) {
-        throw new NullPointerException("map key");
-      }
-      return internalGetExtFields().getMap().containsKey(key);
-    }
-
     /**
      * <code>map&lt;string, string&gt; extFields = 7;</code>
      */
     @java.lang.Override
-
-    public java.lang.String getExtFieldsOrDefault(
-            java.lang.String key,
-            java.lang.String defaultValue) {
-      if (key == null) {
-        throw new NullPointerException("map key");
-      }
+    public /* nullable */
+java.lang.String getExtFieldsOrDefault(
+        java.lang.String key,
+        /* nullable */
+java.lang.String defaultValue) {
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, java.lang.String> map =
-              internalGetExtFields().getMap();
+          internalGetExtFields().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      * <code>map&lt;string, string&gt; extFields = 7;</code>
      */
     @java.lang.Override
-
     public java.lang.String getExtFieldsOrThrow(
-            java.lang.String key) {
-      if (key == null) {
-        throw new NullPointerException("map key");
-      }
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, java.lang.String> map =
-              internalGetExtFields().getMap();
+          internalGetExtFields().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
       return map.get(key);
     }
-
     public Builder clearExtFields() {
+      bitField0_ = (bitField0_ & ~0x00000040);
       internalGetMutableExtFields().getMutableMap()
-              .clear();
+          .clear();
       return this;
     }
-
+    /**
+     * <code>map&lt;string, string&gt; extFields = 7;</code>
+     */
+    public Builder removeExtFields(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      internalGetMutableExtFields().getMutableMap()
+          .remove(key);
+      return this;
+    }
     /**
      * Use alternate mutation accessors instead.
      */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String>
-    getMutableExtFields() {
+        getMutableExtFields() {
+      bitField0_ |= 0x00000040;
       return internalGetMutableExtFields().getMutableMap();
     }
-
-    /**
-     * <code>map&lt;string, string&gt; extFields = 7;</code>
-     */
-
-    public Builder removeExtFields(
-            java.lang.String key) {
-      if (key == null) {
-        throw new NullPointerException("map key");
-      }
-      internalGetMutableExtFields().getMutableMap()
-              .remove(key);
-      return this;
-    }
-
     /**
      * <code>map&lt;string, string&gt; extFields = 7;</code>
      */
     public Builder putExtFields(
-            java.lang.String key,
-            java.lang.String value) {
-      if (key == null) {
-        throw new NullPointerException("map key");
-      }
-      if (value == null) {
-        throw new NullPointerException("map value");
-      }
-
+        java.lang.String key,
+        java.lang.String value) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      if (value == null) { throw new NullPointerException("map value"); }
       internalGetMutableExtFields().getMutableMap()
-              .put(key, value);
+          .put(key, value);
+      bitField0_ |= 0x00000040;
       return this;
     }
-
     /**
      * <code>map&lt;string, string&gt; extFields = 7;</code>
      */
-
     public Builder putAllExtFields(
-            java.util.Map<java.lang.String, java.lang.String> values) {
+        java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableExtFields().getMutableMap()
-              .putAll(values);
-      return this;
-    }
-
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetImplicitFields() {
-      if (implicitFields_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-                ImplicitFieldsDefaultEntryHolder.defaultEntry);
-      }
-      return implicitFields_;
-    }
-
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableImplicitFields() {
-      onChanged();
-      if (implicitFields_ == null) {
-        implicitFields_ = com.google.protobuf.MapField.newMapField(
-                ImplicitFieldsDefaultEntryHolder.defaultEntry);
-      }
-      if (!implicitFields_.isMutable()) {
-        implicitFields_ = implicitFields_.copy();
-      }
-      return implicitFields_;
-    }
-
-    public int getImplicitFieldsCount() {
-      return internalGetImplicitFields().getMap().size();
-    }
-
-    /**
-     * <code>map&lt;string, string&gt; implicitFields = 8;</code>
-     */
-
-    @java.lang.Override
-    public boolean containsImplicitFields(
-            java.lang.String key) {
-      if (key == null) {
-        throw new NullPointerException("map key");
-      }
-      return internalGetImplicitFields().getMap().containsKey(key);
-    }
-
-    /**
-     * Use {@link #getImplicitFieldsMap()} instead.
-     */
-    @java.lang.Override
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getImplicitFields() {
-      return getImplicitFieldsMap();
-    }
-
-    /**
-     * <code>map&lt;string, string&gt; implicitFields = 8;</code>
-     */
-    @java.lang.Override
-
-    public java.util.Map<java.lang.String, java.lang.String> getImplicitFieldsMap() {
-      return internalGetImplicitFields().getMap();
-    }
-
-    /**
-     * <code>map&lt;string, string&gt; implicitFields = 8;</code>
-     */
-    @java.lang.Override
-
-    public java.lang.String getImplicitFieldsOrDefault(
-            java.lang.String key,
-            java.lang.String defaultValue) {
-      if (key == null) {
-        throw new NullPointerException("map key");
-      }
-      java.util.Map<java.lang.String, java.lang.String> map =
-              internalGetImplicitFields().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-
-    /**
-     * <code>map&lt;string, string&gt; implicitFields = 8;</code>
-     */
-    @java.lang.Override
-
-    public java.lang.String getImplicitFieldsOrThrow(
-            java.lang.String key) {
-      if (key == null) {
-        throw new NullPointerException("map key");
-      }
-      java.util.Map<java.lang.String, java.lang.String> map =
-              internalGetImplicitFields().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
-    }
-
-    public Builder clearImplicitFields() {
-      internalGetMutableImplicitFields().getMutableMap()
-              .clear();
-      return this;
-    }
-
-    /**
-     * <code>map&lt;string, string&gt; implicitFields = 8;</code>
-     */
-
-    public Builder removeImplicitFields(
-            java.lang.String key) {
-      if (key == null) {
-        throw new NullPointerException("map key");
-      }
-      internalGetMutableImplicitFields().getMutableMap()
-              .remove(key);
-      return this;
-    }
-
-    /**
-     * Use alternate mutation accessors instead.
-     */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String>
-    getMutableImplicitFields() {
-      return internalGetMutableImplicitFields().getMutableMap();
-    }
-
-    /**
-     * <code>map&lt;string, string&gt; implicitFields = 8;</code>
-     */
-    public Builder putImplicitFields(
-            java.lang.String key,
-            java.lang.String value) {
-      if (key == null) {
-        throw new NullPointerException("map key");
-      }
-      if (value == null) {
-        throw new NullPointerException("map value");
-      }
-
-      internalGetMutableImplicitFields().getMutableMap()
-              .put(key, value);
-      return this;
-    }
-
-    /**
-     * <code>map&lt;string, string&gt; implicitFields = 8;</code>
-     */
-
-    public Builder putAllImplicitFields(
-            java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableImplicitFields().getMutableMap()
-              .putAll(values);
+          .putAll(values);
+      bitField0_ |= 0x00000040;
       return this;
     }
     @java.lang.Override
@@ -1725,6 +1247,52 @@ public final class RemotingCommandProtobuf extends
 
 
     // @@protoc_insertion_point(builder_scope:RemotingCommandProtobuf)
+  }
+
+  // @@protoc_insertion_point(class_scope:RemotingCommandProtobuf)
+  private static final io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf DEFAULT_INSTANCE;
+  static {
+    DEFAULT_INSTANCE = new io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf();
+  }
+
+  public static io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf getDefaultInstance() {
+    return DEFAULT_INSTANCE;
+  }
+
+  private static final com.google.protobuf.Parser<RemotingCommandProtobuf>
+      PARSER = new com.google.protobuf.AbstractParser<RemotingCommandProtobuf>() {
+    @java.lang.Override
+    public RemotingCommandProtobuf parsePartialFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      Builder builder = newBuilder();
+      try {
+        builder.mergeFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(builder.buildPartial());
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(builder.buildPartial());
+      }
+      return builder.buildPartial();
+    }
+  };
+
+  public static com.google.protobuf.Parser<RemotingCommandProtobuf> parser() {
+    return PARSER;
+  }
+
+  @java.lang.Override
+  public com.google.protobuf.Parser<RemotingCommandProtobuf> getParserForType() {
+    return PARSER;
+  }
+
+  @java.lang.Override
+  public io.github.notoday.netty.remoting.protocol.protobuf.RemotingCommandProtobuf getDefaultInstanceForType() {
+    return DEFAULT_INSTANCE;
   }
 
 }

@@ -59,6 +59,7 @@ public class NettyRemotingServer extends NettyRemotingAbstract implements Remoti
 
     private final Authenticator authenticator;
     private final ConcurrentHashMap<String, Channel> channelTable = new ConcurrentHashMap<>();
+
     // sharable handlers
     private ProtobufDecoder protobufDecoder;
     private ProtobufVarint32LengthFieldPrepender protobufVarint32LengthFieldPrepender;
@@ -78,7 +79,7 @@ public class NettyRemotingServer extends NettyRemotingAbstract implements Remoti
         this.defaultEventExecutorGroup = new DefaultEventExecutorGroup(config.getWorkerThreads(), RemotingUtil.newThreadFactory("NettyServerCodecThread"));
 
         if (useEpoll()) {
-            log.debug("--use epoll");
+            log.debug("use epoll");
             this.eventLoopGroupBoss = new EpollEventLoopGroup(1, RemotingUtil.newThreadFactory("NettyServerEpollBoss"));
             this.eventLoopGroupSelector = new EpollEventLoopGroup(config.getSelectorThreads(), RemotingUtil.newThreadFactory("NettyServerEpollSelector"));
         } else {

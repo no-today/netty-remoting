@@ -7,125 +7,123 @@ package io.github.notoday.netty.remoting.protocol.protobuf;
  * Protobuf type {@code AuthenticationToken}
  */
 public final class AuthenticationToken extends
-        com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:AuthenticationToken)
-        AuthenticationTokenOrBuilder {
-  public static final int TOKEN_FIELD_NUMBER = 1;
-
+    com.google.protobuf.GeneratedMessageV3 implements
+    // @@protoc_insertion_point(message_implements:AuthenticationToken)
+    AuthenticationTokenOrBuilder {
+private static final long serialVersionUID = 0L;
   // Use AuthenticationToken.newBuilder() to construct.
   private AuthenticationToken(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-
   private AuthenticationToken() {
     token_ = "";
     login_ = "";
   }
 
-  public static final int LOGIN_FIELD_NUMBER = 2;
-  private static final long serialVersionUID = 0L;
-  // @@protoc_insertion_point(class_scope:AuthenticationToken)
-  private static final io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken DEFAULT_INSTANCE;
-  private static final com.google.protobuf.Parser<AuthenticationToken>
-          PARSER = new com.google.protobuf.AbstractParser<AuthenticationToken>() {
-    @java.lang.Override
-    public AuthenticationToken parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return new AuthenticationToken(input, extensionRegistry);
-    }
-  };
-
-  static {
-    DEFAULT_INSTANCE = new io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken();
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new AuthenticationToken();
   }
 
-  private volatile java.lang.Object token_;
-  private volatile java.lang.Object login_;
-  private byte memoizedIsInitialized = -1;
-
-  private AuthenticationToken(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            token_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            login_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet
+  getUnknownFields() {
+    return this.unknownFields;
   }
-
   public static final com.google.protobuf.Descriptors.Descriptor
-  getDescriptor() {
+      getDescriptor() {
     return io.github.notoday.netty.remoting.protocol.protobuf.Protocol.internal_static_AuthenticationToken_descriptor;
   }
 
-  public static io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken parseFrom(
-          java.nio.ByteBuffer data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
+  @java.lang.Override
+  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internalGetFieldAccessorTable() {
+    return io.github.notoday.netty.remoting.protocol.protobuf.Protocol.internal_static_AuthenticationToken_fieldAccessorTable
+        .ensureFieldAccessorsInitialized(
+            io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken.class, io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken.Builder.class);
   }
 
-  public static io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken parseFrom(
-          java.nio.ByteBuffer data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
+  public static final int TOKEN_FIELD_NUMBER = 1;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object token_ = "";
+  /**
+   * <code>string token = 1;</code>
+   * @return The token.
+   */
+  @java.lang.Override
+  public java.lang.String getToken() {
+    java.lang.Object ref = token_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      token_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string token = 1;</code>
+   * @return The bytes for token.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTokenBytes() {
+    java.lang.Object ref = token_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      token_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
-  public static io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
+  public static final int LOGIN_FIELD_NUMBER = 2;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object login_ = "";
+  /**
+   * <code>string login = 2;</code>
+   * @return The login.
+   */
+  @java.lang.Override
+  public java.lang.String getLogin() {
+    java.lang.Object ref = login_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      login_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string login = 2;</code>
+   * @return The bytes for login.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getLoginBytes() {
+    java.lang.Object ref = login_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      login_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
-  public static io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
-
+  private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -136,9 +134,16 @@ public final class AuthenticationToken extends
     return true;
   }
 
-  public static io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output)
+                      throws java.io.IOException {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(token_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, token_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(login_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, login_);
+    }
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -153,200 +158,9 @@ public final class AuthenticationToken extends
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(login_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, login_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
-  }
-
-  public static io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
-
-  @java.lang.Override
-  public int hashCode() {
-    if (memoizedHashCode != 0) {
-      return memoizedHashCode;
-    }
-    int hash = 41;
-    hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + TOKEN_FIELD_NUMBER;
-    hash = (53 * hash) + getToken().hashCode();
-    hash = (37 * hash) + LOGIN_FIELD_NUMBER;
-    hash = (53 * hash) + getLogin().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
-    memoizedHashCode = hash;
-    return hash;
-  }
-
-  public static io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-  }
-
-  public static io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public static io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
-  }
-
-  public static io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public static io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-  }
-
-  public static io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-
-  public static Builder newBuilder(io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-
-  public static io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken getDefaultInstance() {
-    return DEFAULT_INSTANCE;
-  }
-
-  public static com.google.protobuf.Parser<AuthenticationToken> parser() {
-    return PARSER;
-  }
-
-  @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
-          UnusedPrivateParameter unused) {
-    return new AuthenticationToken();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
-
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-  internalGetFieldAccessorTable() {
-    return io.github.notoday.netty.remoting.protocol.protobuf.Protocol.internal_static_AuthenticationToken_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                    io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken.class, io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken.Builder.class);
-  }
-
-  /**
-   * <code>string token = 1;</code>
-   * @return The token.
-   */
-  @java.lang.Override
-  public java.lang.String getToken() {
-    java.lang.Object ref = token_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      token_ = s;
-      return s;
-    }
-  }
-
-  /**
-   * <code>string token = 1;</code>
-   *
-   * @return The bytes for token.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-  getTokenBytes() {
-    java.lang.Object ref = token_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8(
-                      (java.lang.String) ref);
-      token_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  /**
-   * <code>string login = 2;</code>
-   * @return The login.
-   */
-  @java.lang.Override
-  public java.lang.String getLogin() {
-    java.lang.Object ref = login_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      login_ = s;
-      return s;
-    }
-  }
-
-  /**
-   * <code>string login = 2;</code>
-   *
-   * @return The bytes for login.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-  getLoginBytes() {
-    java.lang.Object ref = login_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8(
-                      (java.lang.String) ref);
-      login_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-          throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(token_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, token_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(login_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, login_);
-    }
-    unknownFields.writeTo(output);
   }
 
   @java.lang.Override
@@ -360,77 +174,161 @@ public final class AuthenticationToken extends
     io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken other = (io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken) obj;
 
     if (!getToken()
-            .equals(other.getToken())) return false;
+        .equals(other.getToken())) return false;
     if (!getLogin()
-            .equals(other.getLogin())) return false;
-    return unknownFields.equals(other.unknownFields);
+        .equals(other.getLogin())) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+    return true;
+  }
+
+  @java.lang.Override
+  public int hashCode() {
+    if (memoizedHashCode != 0) {
+      return memoizedHashCode;
+    }
+    int hash = 41;
+    hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + TOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getToken().hashCode();
+    hash = (37 * hash) + LOGIN_FIELD_NUMBER;
+    hash = (53 * hash) + getLogin().hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
+    memoizedHashCode = hash;
+    return hash;
+  }
+
+  public static io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken parseFrom(
+      java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken parseFrom(
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
+  public static io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken parseFrom(
+      com.google.protobuf.ByteString data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken parseFrom(
+      com.google.protobuf.ByteString data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
+  public static io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken parseFrom(byte[] data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken parseFrom(
+      byte[] data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
+  public static io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken parseFrom(java.io.InputStream input)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
+  }
+  public static io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken parseFrom(
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
+  }
+  public static io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken parseDelimitedFrom(java.io.InputStream input)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input);
+  }
+  public static io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken parseDelimitedFrom(
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+  }
+  public static io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken parseFrom(
+      com.google.protobuf.CodedInputStream input)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
+  }
+  public static io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken parseFrom(
+      com.google.protobuf.CodedInputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
-
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+  public static Builder newBuilder(io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
   @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
+        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
   protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
-
-  @java.lang.Override
-  public com.google.protobuf.Parser<AuthenticationToken> getParserForType() {
-    return PARSER;
-  }
-
-  @java.lang.Override
-  public io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken getDefaultInstanceForType() {
-    return DEFAULT_INSTANCE;
-  }
-
   /**
    * Protobuf type {@code AuthenticationToken}
    */
   public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:AuthenticationToken)
-          io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationTokenOrBuilder {
-    private java.lang.Object token_ = "";
-    private java.lang.Object login_ = "";
-
-    // Construct using io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
-
-    private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+      // @@protoc_insertion_point(builder_implements:AuthenticationToken)
+      io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationTokenOrBuilder {
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.github.notoday.netty.remoting.protocol.protobuf.Protocol.internal_static_AuthenticationToken_descriptor;
     }
 
     @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.github.notoday.netty.remoting.protocol.protobuf.Protocol.internal_static_AuthenticationToken_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken.class, io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken.Builder.class);
+    }
+
+    // Construct using io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken.newBuilder()
+    private Builder() {
+
+    }
+
+    private Builder(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      super(parent);
+
+    }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       token_ = "";
-
       login_ = "";
-
       return this;
     }
 
-    public static final com.google.protobuf.Descriptors.Descriptor
-    getDescriptor() {
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor
+        getDescriptorForType() {
       return io.github.notoday.netty.remoting.protocol.protobuf.Protocol.internal_static_AuthenticationToken_descriptor;
     }
 
@@ -451,62 +349,78 @@ public final class AuthenticationToken extends
     @java.lang.Override
     public io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken buildPartial() {
       io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken result = new io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken(this);
-      result.token_ = token_;
-      result.login_ = login_;
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.token_ = token_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.login_ = login_;
+      }
     }
 
     @java.lang.Override
     public Builder clone() {
       return super.clone();
     }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-    internalGetFieldAccessorTable() {
-      return io.github.notoday.netty.remoting.protocol.protobuf.Protocol.internal_static_AuthenticationToken_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                      io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken.class, io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken.Builder.class);
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-    getDescriptorForType() {
-      return io.github.notoday.netty.remoting.protocol.protobuf.Protocol.internal_static_AuthenticationToken_descriptor;
-    }
-
     @java.lang.Override
     public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return super.setField(field, value);
     }
-
     @java.lang.Override
     public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
+        com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-
     @java.lang.Override
     public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-
     @java.lang.Override
     public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
-
     @java.lang.Override
     public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return super.addRepeatedField(field, value);
+    }
+    @java.lang.Override
+    public Builder mergeFrom(com.google.protobuf.Message other) {
+      if (other instanceof io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken) {
+        return mergeFrom((io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken)other);
+      } else {
+        super.mergeFrom(other);
+        return this;
+      }
+    }
+
+    public Builder mergeFrom(io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken other) {
+      if (other == io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken.getDefaultInstance()) return this;
+      if (!other.getToken().isEmpty()) {
+        token_ = other.token_;
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
+      if (!other.getLogin().isEmpty()) {
+        login_ = other.login_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      this.mergeUnknownFields(other.getUnknownFields());
+      onChanged();
+      return this;
     }
 
     @java.lang.Override
@@ -515,50 +429,49 @@ public final class AuthenticationToken extends
     }
 
     @java.lang.Override
-    public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken) {
-        return mergeFrom((io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken) other);
-      } else {
-        super.mergeFrom(other);
-        return this;
-      }
-    }
-
-    public Builder mergeFrom(io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken other) {
-      if (other == io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken.getDefaultInstance())
-        return this;
-      if (!other.getToken().isEmpty()) {
-        token_ = other.token_;
-        onChanged();
-      }
-      if (!other.getLogin().isEmpty()) {
-        login_ = other.login_;
-        onChanged();
-      }
-      this.mergeUnknownFields(other.unknownFields);
-      onChanged();
-      return this;
-    }
-
-    @java.lang.Override
     public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-      io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken parsedMessage = null;
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              token_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000001;
+              break;
+            } // case 10
+            case 18: {
+              login_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000002;
+              break;
+            } // case 18
+            default: {
+              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                done = true; // was an endgroup tag
+              }
+              break;
+            } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
+    private int bitField0_;
 
+    private java.lang.Object token_ = "";
     /**
      * <code>string token = 1;</code>
      * @return The token.
@@ -567,7 +480,7 @@ public final class AuthenticationToken extends
       java.lang.Object ref = token_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
+            (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         token_ = s;
         return s;
@@ -575,72 +488,62 @@ public final class AuthenticationToken extends
         return (java.lang.String) ref;
       }
     }
-
     /**
      * <code>string token = 1;</code>
-     *
-     * @param value The token to set.
-     * @return This builder for chaining.
-     */
-    public Builder setToken(
-            java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      token_ = value;
-      onChanged();
-      return this;
-    }
-
-    /**
-     * <code>string token = 1;</code>
-     *
      * @return The bytes for token.
      */
     public com.google.protobuf.ByteString
-    getTokenBytes() {
+        getTokenBytes() {
       java.lang.Object ref = token_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-                com.google.protobuf.ByteString.copyFromUtf8(
-                        (java.lang.String) ref);
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         token_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      * <code>string token = 1;</code>
-     *
-     * @param value The bytes for token to set.
+     * @param value The token to set.
      * @return This builder for chaining.
      */
-    public Builder setTokenBytes(
-            com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
+    public Builder setToken(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
       token_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
-
     /**
      * <code>string token = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearToken() {
-
       token_ = getDefaultInstance().getToken();
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string token = 1;</code>
+     * @param value The bytes for token to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTokenBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      token_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
 
+    private java.lang.Object login_ = "";
     /**
      * <code>string login = 2;</code>
      * @return The login.
@@ -657,75 +560,63 @@ public final class AuthenticationToken extends
         return (java.lang.String) ref;
       }
     }
-
     /**
      * <code>string login = 2;</code>
-     *
-     * @param value The login to set.
-     * @return This builder for chaining.
-     */
-    public Builder setLogin(
-            java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      login_ = value;
-      onChanged();
-      return this;
-    }
-
-    /**
-     * <code>string login = 2;</code>
-     *
      * @return The bytes for login.
      */
     public com.google.protobuf.ByteString
-    getLoginBytes() {
+        getLoginBytes() {
       java.lang.Object ref = login_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-                com.google.protobuf.ByteString.copyFromUtf8(
-                        (java.lang.String) ref);
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         login_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      * <code>string login = 2;</code>
-     *
-     * @param value The bytes for login to set.
+     * @param value The login to set.
      * @return This builder for chaining.
      */
-    public Builder setLoginBytes(
-            com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-
+    public Builder setLogin(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
       login_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
-
     /**
      * <code>string login = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearLogin() {
-
       login_ = getDefaultInstance().getLogin();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
-
+    /**
+     * <code>string login = 2;</code>
+     * @param value The bytes for login to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLoginBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      login_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
     @java.lang.Override
     public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
@@ -737,6 +628,52 @@ public final class AuthenticationToken extends
 
 
     // @@protoc_insertion_point(builder_scope:AuthenticationToken)
+  }
+
+  // @@protoc_insertion_point(class_scope:AuthenticationToken)
+  private static final io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken DEFAULT_INSTANCE;
+  static {
+    DEFAULT_INSTANCE = new io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken();
+  }
+
+  public static io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken getDefaultInstance() {
+    return DEFAULT_INSTANCE;
+  }
+
+  private static final com.google.protobuf.Parser<AuthenticationToken>
+      PARSER = new com.google.protobuf.AbstractParser<AuthenticationToken>() {
+    @java.lang.Override
+    public AuthenticationToken parsePartialFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      Builder builder = newBuilder();
+      try {
+        builder.mergeFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(builder.buildPartial());
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(builder.buildPartial());
+      }
+      return builder.buildPartial();
+    }
+  };
+
+  public static com.google.protobuf.Parser<AuthenticationToken> parser() {
+    return PARSER;
+  }
+
+  @java.lang.Override
+  public com.google.protobuf.Parser<AuthenticationToken> getParserForType() {
+    return PARSER;
+  }
+
+  @java.lang.Override
+  public io.github.notoday.netty.remoting.protocol.protobuf.AuthenticationToken getDefaultInstanceForType() {
+    return DEFAULT_INSTANCE;
   }
 
 }

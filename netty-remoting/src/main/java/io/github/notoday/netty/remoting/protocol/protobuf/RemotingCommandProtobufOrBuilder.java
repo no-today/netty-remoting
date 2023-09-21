@@ -4,153 +4,96 @@
 package io.github.notoday.netty.remoting.protocol.protobuf;
 
 public interface RemotingCommandProtobufOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:RemotingCommandProtobuf)
-        com.google.protobuf.MessageOrBuilder {
+    // @@protoc_insertion_point(interface_extends:RemotingCommandProtobuf)
+    com.google.protobuf.MessageOrBuilder {
 
-    /**
-     * <code>int32 version = 1;</code>
-     *
-     * @return The version.
-     */
-    int getVersion();
+  /**
+   * <code>int32 version = 1;</code>
+   * @return The version.
+   */
+  int getVersion();
 
-    /**
-     * <code>int32 reqId = 2;</code>
-     *
-     * @return The reqId.
-     */
-    int getReqId();
+  /**
+   * <code>int32 reqId = 2;</code>
+   * @return The reqId.
+   */
+  int getReqId();
 
-    /**
-     * <code>int32 flag = 3;</code>
-     *
-     * @return The flag.
-     */
-    int getFlag();
+  /**
+   * <code>int32 flag = 3;</code>
+   * @return The flag.
+   */
+  int getFlag();
 
-    /**
-     * <code>int32 code = 4;</code>
-     *
-     * @return The code.
-     */
-    int getCode();
+  /**
+   * <code>int32 code = 4;</code>
+   * @return The code.
+   */
+  int getCode();
 
-    /**
-     * <code>optional string remark = 5;</code>
-     *
-     * @return Whether the remark field is set.
-     */
-    boolean hasRemark();
+  /**
+   * <code>optional string remark = 5;</code>
+   * @return Whether the remark field is set.
+   */
+  boolean hasRemark();
+  /**
+   * <code>optional string remark = 5;</code>
+   * @return The remark.
+   */
+  java.lang.String getRemark();
+  /**
+   * <code>optional string remark = 5;</code>
+   * @return The bytes for remark.
+   */
+  com.google.protobuf.ByteString
+      getRemarkBytes();
 
-    /**
-     * <code>optional string remark = 5;</code>
-     *
-     * @return The remark.
-     */
-    java.lang.String getRemark();
+  /**
+   * <code>optional .google.protobuf.Any body = 6;</code>
+   * @return Whether the body field is set.
+   */
+  boolean hasBody();
+  /**
+   * <code>optional .google.protobuf.Any body = 6;</code>
+   * @return The body.
+   */
+  com.google.protobuf.Any getBody();
+  /**
+   * <code>optional .google.protobuf.Any body = 6;</code>
+   */
+  com.google.protobuf.AnyOrBuilder getBodyOrBuilder();
 
-    /**
-     * <code>optional string remark = 5;</code>
-     *
-     * @return The bytes for remark.
-     */
-    com.google.protobuf.ByteString
-    getRemarkBytes();
-
-    /**
-     * <code>optional .google.protobuf.Any body = 6;</code>
-     *
-     * @return Whether the body field is set.
-     */
-    boolean hasBody();
-
-    /**
-     * <code>optional .google.protobuf.Any body = 6;</code>
-     *
-     * @return The body.
-     */
-    com.google.protobuf.Any getBody();
-
-    /**
-     * <code>optional .google.protobuf.Any body = 6;</code>
-     */
-    com.google.protobuf.AnyOrBuilder getBodyOrBuilder();
-
-    /**
-     * <code>map&lt;string, string&gt; extFields = 7;</code>
-     */
-    int getExtFieldsCount();
-
-    /**
-     * <code>map&lt;string, string&gt; extFields = 7;</code>
-     */
-    boolean containsExtFields(
-            java.lang.String key);
-
-    /**
-     * Use {@link #getExtFieldsMap()} instead.
-     */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.String, java.lang.String>
-    getExtFields();
-
-    /**
-     * <code>map&lt;string, string&gt; extFields = 7;</code>
-     */
-    java.util.Map<java.lang.String, java.lang.String>
-    getExtFieldsMap();
-
-    /**
-     * <code>map&lt;string, string&gt; extFields = 7;</code>
-     */
-
-    java.lang.String getExtFieldsOrDefault(
-            java.lang.String key,
-            java.lang.String defaultValue);
-
-    /**
-     * <code>map&lt;string, string&gt; extFields = 7;</code>
-     */
-
-    java.lang.String getExtFieldsOrThrow(
-            java.lang.String key);
-
-    /**
-     * <code>map&lt;string, string&gt; implicitFields = 8;</code>
-     */
-    int getImplicitFieldsCount();
-
-    /**
-     * <code>map&lt;string, string&gt; implicitFields = 8;</code>
-     */
-    boolean containsImplicitFields(
-            java.lang.String key);
-
-    /**
-     * Use {@link #getImplicitFieldsMap()} instead.
-     */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.String, java.lang.String>
-    getImplicitFields();
-
-    /**
-     * <code>map&lt;string, string&gt; implicitFields = 8;</code>
-     */
-    java.util.Map<java.lang.String, java.lang.String>
-    getImplicitFieldsMap();
-
-    /**
-     * <code>map&lt;string, string&gt; implicitFields = 8;</code>
-     */
-
-    java.lang.String getImplicitFieldsOrDefault(
-            java.lang.String key,
-            java.lang.String defaultValue);
-
-    /**
-     * <code>map&lt;string, string&gt; implicitFields = 8;</code>
-     */
-
-    java.lang.String getImplicitFieldsOrThrow(
-            java.lang.String key);
+  /**
+   * <code>map&lt;string, string&gt; extFields = 7;</code>
+   */
+  int getExtFieldsCount();
+  /**
+   * <code>map&lt;string, string&gt; extFields = 7;</code>
+   */
+  boolean containsExtFields(
+      java.lang.String key);
+  /**
+   * Use {@link #getExtFieldsMap()} instead.
+   */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String>
+  getExtFields();
+  /**
+   * <code>map&lt;string, string&gt; extFields = 7;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String>
+  getExtFieldsMap();
+  /**
+   * <code>map&lt;string, string&gt; extFields = 7;</code>
+   */
+  /* nullable */
+java.lang.String getExtFieldsOrDefault(
+      java.lang.String key,
+      /* nullable */
+java.lang.String defaultValue);
+  /**
+   * <code>map&lt;string, string&gt; extFields = 7;</code>
+   */
+  java.lang.String getExtFieldsOrThrow(
+      java.lang.String key);
 }

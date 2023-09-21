@@ -4,36 +4,30 @@
 package io.github.notoday.netty.remoting.protocol.protobuf;
 
 public interface AuthenticationTokenOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:AuthenticationToken)
-        com.google.protobuf.MessageOrBuilder {
+    // @@protoc_insertion_point(interface_extends:AuthenticationToken)
+    com.google.protobuf.MessageOrBuilder {
 
-    /**
-     * <code>string token = 1;</code>
-     *
-     * @return The token.
-     */
-    java.lang.String getToken();
+  /**
+   * <code>string token = 1;</code>
+   * @return The token.
+   */
+  java.lang.String getToken();
+  /**
+   * <code>string token = 1;</code>
+   * @return The bytes for token.
+   */
+  com.google.protobuf.ByteString
+      getTokenBytes();
 
-    /**
-     * <code>string token = 1;</code>
-     *
-     * @return The bytes for token.
-     */
-    com.google.protobuf.ByteString
-    getTokenBytes();
-
-    /**
-     * <code>string login = 2;</code>
-     *
-     * @return The login.
-     */
-    java.lang.String getLogin();
-
-    /**
-     * <code>string login = 2;</code>
-     *
-     * @return The bytes for login.
-     */
-    com.google.protobuf.ByteString
-    getLoginBytes();
+  /**
+   * <code>string login = 2;</code>
+   * @return The login.
+   */
+  java.lang.String getLogin();
+  /**
+   * <code>string login = 2;</code>
+   * @return The bytes for login.
+   */
+  com.google.protobuf.ByteString
+      getLoginBytes();
 }

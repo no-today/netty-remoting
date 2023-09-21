@@ -23,6 +23,8 @@ public class NettyServerConfig extends NettySocketConfig implements Cloneable {
 
     private boolean serverPooledByteBufAllocatorEnable = true;
 
+    private boolean enableSSL = true;
+
     @Override
     public NettyServerConfig clone() {
         try {

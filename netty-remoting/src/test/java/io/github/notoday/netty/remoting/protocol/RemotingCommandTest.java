@@ -8,6 +8,7 @@ import org.junit.Test;
 import java.util.UUID;
 
 import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 
 /**
  * @author no-today
@@ -17,20 +18,23 @@ public class RemotingCommandTest {
 
     @Test
     public void protobuf() {
-        RemotingCommandProtobuf protobuf = RemotingCommandProtobuf.newBuilder()
+        RemotingCommandProtobuf commandProtobuf1 = RemotingCommandProtobuf.newBuilder()
                 .setVersion(1)
                 .setFlag(1)
                 .setCode(1)
                 .setRemark("ok")
                 .setReqId(1)
                 .setBody(Any.pack(AuthenticationToken.newBuilder().setToken(random()).setLogin("no-today").build()))
-                .putExtFields("random", "UUID")
-                .putImplicitFields("traceId", UUID.randomUUID().toString())
+                .putExtFields("random", random())
+                .putExtFields("traceId", random())
                 .build();
 
-        System.out.println(protobuf);
-        System.out.println(RemotingCommand.of(protobuf));
-        System.out.println(RemotingCommand.of(protobuf));
+        RemotingCommand command1 = RemotingCommand.of(commandProtobuf1);
+        RemotingCommandProtobuf commandProtobuf2 = command1.protobuf();
+        RemotingCommand command2 = RemotingCommand.of(commandProtobuf2);
+
+        assertEquals(commandProtobuf1, commandProtobuf2);
+        assertEquals(command1, command2);
     }
 
     @Test

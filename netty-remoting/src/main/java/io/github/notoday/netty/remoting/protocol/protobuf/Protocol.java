@@ -4,95 +4,77 @@
 package io.github.notoday.netty.remoting.protocol.protobuf;
 
 public final class Protocol {
-  static final com.google.protobuf.Descriptors.Descriptor
-          internal_static_RemotingCommandProtobuf_descriptor;
-  static final
-  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internal_static_RemotingCommandProtobuf_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-          internal_static_RemotingCommandProtobuf_ExtFieldsEntry_descriptor;
-  static final
-  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internal_static_RemotingCommandProtobuf_ExtFieldsEntry_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-          internal_static_RemotingCommandProtobuf_ImplicitFieldsEntry_descriptor;
-  static final
-  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internal_static_RemotingCommandProtobuf_ImplicitFieldsEntry_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-          internal_static_AuthenticationToken_descriptor;
-  static final
-  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internal_static_AuthenticationToken_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.FileDescriptor
-          descriptor;
-
-  static {
-    java.lang.String[] descriptorData = {
-            "\n\027protocol/protocol.proto\032\031google/protob" +
-                    "uf/any.proto\"\222\003\n\027RemotingCommandProtobuf" +
-                    "\022\017\n\007version\030\001 \001(\005\022\r\n\005reqId\030\002 \001(\005\022\014\n\004flag" +
-                    "\030\003 \001(\005\022\014\n\004code\030\004 \001(\005\022\023\n\006remark\030\005 \001(\tH\000\210\001" +
-                    "\001\022'\n\004body\030\006 \001(\0132\024.google.protobuf.AnyH\001\210" +
-                    "\001\001\022:\n\textFields\030\007 \003(\0132'.RemotingCommandP" +
-                    "rotobuf.ExtFieldsEntry\022D\n\016implicitFields" +
-                    "\030\010 \003(\0132,.RemotingCommandProtobuf.Implici" +
-                    "tFieldsEntry\0320\n\016ExtFieldsEntry\022\013\n\003key\030\001 " +
-                    "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\0325\n\023ImplicitFields" +
-                    "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\t\n" +
-                    "\007_remarkB\007\n\005_body\"3\n\023AuthenticationToken" +
-                    "\022\r\n\005token\030\001 \001(\t\022\r\n\005login\030\002 \001(\tB6\n2io.git" +
-                    "hub.notoday.netty.remoting.protocol.prot" +
-                    "obufP\001b\006proto3"
-    };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
-            .internalBuildGeneratedFileFrom(descriptorData,
-                    new com.google.protobuf.Descriptors.FileDescriptor[]{
-                            com.google.protobuf.AnyProto.getDescriptor(),
-                    });
-    internal_static_RemotingCommandProtobuf_descriptor =
-            getDescriptor().getMessageTypes().get(0);
-    internal_static_RemotingCommandProtobuf_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_RemotingCommandProtobuf_descriptor,
-            new java.lang.String[]{"Version", "ReqId", "Flag", "Code", "Remark", "Body", "ExtFields", "ImplicitFields", "Remark", "Body",});
-    internal_static_RemotingCommandProtobuf_ExtFieldsEntry_descriptor =
-            internal_static_RemotingCommandProtobuf_descriptor.getNestedTypes().get(0);
-    internal_static_RemotingCommandProtobuf_ExtFieldsEntry_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_RemotingCommandProtobuf_ExtFieldsEntry_descriptor,
-            new java.lang.String[]{"Key", "Value",});
-    internal_static_RemotingCommandProtobuf_ImplicitFieldsEntry_descriptor =
-            internal_static_RemotingCommandProtobuf_descriptor.getNestedTypes().get(1);
-    internal_static_RemotingCommandProtobuf_ImplicitFieldsEntry_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_RemotingCommandProtobuf_ImplicitFieldsEntry_descriptor,
-            new java.lang.String[]{"Key", "Value",});
-    internal_static_AuthenticationToken_descriptor =
-            getDescriptor().getMessageTypes().get(1);
-    internal_static_AuthenticationToken_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_AuthenticationToken_descriptor,
-            new java.lang.String[]{"Token", "Login",});
-    com.google.protobuf.AnyProto.getDescriptor();
-  }
-
-  private Protocol() {
+  private Protocol() {}
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistryLite registry) {
   }
 
   public static void registerAllExtensions(
-          com.google.protobuf.ExtensionRegistryLite registry) {
-  }
-
-  public static void registerAllExtensions(
-          com.google.protobuf.ExtensionRegistry registry) {
+      com.google.protobuf.ExtensionRegistry registry) {
     registerAllExtensions(
-            (com.google.protobuf.ExtensionRegistryLite) registry);
+        (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_RemotingCommandProtobuf_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_RemotingCommandProtobuf_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_RemotingCommandProtobuf_ExtFieldsEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_RemotingCommandProtobuf_ExtFieldsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_AuthenticationToken_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_AuthenticationToken_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
-  getDescriptor() {
+      getDescriptor() {
     return descriptor;
+  }
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
+  static {
+    java.lang.String[] descriptorData = {
+      "\n\027protocol/protocol.proto\032\031google/protob" +
+      "uf/any.proto\"\225\002\n\027RemotingCommandProtobuf" +
+      "\022\017\n\007version\030\001 \001(\005\022\r\n\005reqId\030\002 \001(\005\022\014\n\004flag" +
+      "\030\003 \001(\005\022\014\n\004code\030\004 \001(\005\022\023\n\006remark\030\005 \001(\tH\000\210\001" +
+      "\001\022\'\n\004body\030\006 \001(\0132\024.google.protobuf.AnyH\001\210" +
+      "\001\001\022:\n\textFields\030\007 \003(\0132\'.RemotingCommandP" +
+      "rotobuf.ExtFieldsEntry\0320\n\016ExtFieldsEntry" +
+      "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\t\n\007_rem" +
+      "arkB\007\n\005_body\"3\n\023AuthenticationToken\022\r\n\005t" +
+      "oken\030\001 \001(\t\022\r\n\005login\030\002 \001(\tB6\n2io.github.n" +
+      "otoday.netty.remoting.protocol.protobufP" +
+      "\001b\006proto3"
+    };
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.protobuf.AnyProto.getDescriptor(),
+        });
+    internal_static_RemotingCommandProtobuf_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_RemotingCommandProtobuf_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_RemotingCommandProtobuf_descriptor,
+        new java.lang.String[] { "Version", "ReqId", "Flag", "Code", "Remark", "Body", "ExtFields", "Remark", "Body", });
+    internal_static_RemotingCommandProtobuf_ExtFieldsEntry_descriptor =
+      internal_static_RemotingCommandProtobuf_descriptor.getNestedTypes().get(0);
+    internal_static_RemotingCommandProtobuf_ExtFieldsEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_RemotingCommandProtobuf_ExtFieldsEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_AuthenticationToken_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_AuthenticationToken_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_AuthenticationToken_descriptor,
+        new java.lang.String[] { "Token", "Login", });
+    com.google.protobuf.AnyProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
