@@ -38,7 +38,7 @@ public class NettyRemotingServerInterceptor implements InstanceMethodsAroundInte
         CarrierItem next = contextCarrier.items();
         while (next.hasNext()) {
             next = next.next();
-            next.setHeadValue(command.getImplicitFields(next.getHeadKey()));
+            next.setHeadValue(command.getExtFieldsOrDefault(next.getHeadKey(), null));
         }
 
         final AbstractSpan span = ContextManager.createEntrySpan(generateOperationName(command), contextCarrier);

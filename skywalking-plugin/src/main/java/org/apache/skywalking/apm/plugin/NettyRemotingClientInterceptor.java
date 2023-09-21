@@ -36,7 +36,7 @@ public class NettyRemotingClientInterceptor implements InstanceMethodsAroundInte
         CarrierItem next = contextCarrier.items();
         while (next.hasNext()) {
             next = next.next();
-            command.putImplicitFields(next.getHeadKey(), next.getHeadValue());
+            command.putExtFields(next.getHeadKey(), next.getHeadValue());
         }
 
         span.tag(TAG_REQUEST, command.toString());
