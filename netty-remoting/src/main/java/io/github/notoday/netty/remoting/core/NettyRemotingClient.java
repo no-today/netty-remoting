@@ -2,11 +2,11 @@ package io.github.notoday.netty.remoting.core;
 
 import io.github.notoday.netty.remoting.ChannelEventListener;
 import io.github.notoday.netty.remoting.RemotingClient;
-import io.github.notoday.netty.remoting.common.ErrorInfo;
 import io.github.notoday.netty.remoting.common.RemotingSystemCode;
 import io.github.notoday.netty.remoting.common.RemotingUtil;
 import io.github.notoday.netty.remoting.config.NettyClientConfig;
 import io.github.notoday.netty.remoting.exception.RemotingConnectException;
+import io.github.notoday.netty.remoting.exception.RemotingRuntimeException;
 import io.github.notoday.netty.remoting.exception.RemotingSendRequestException;
 import io.github.notoday.netty.remoting.exception.RemotingTimeoutException;
 import io.github.notoday.netty.remoting.protocol.Any;
@@ -66,6 +66,10 @@ public class NettyRemotingClient extends NettyRemotingAbstract implements Remoti
         this.callbackExecutor = Executors.newFixedThreadPool(Math.max(4, config.getCallbackExecutorThreads()), RemotingUtil.newThreadFactory("NettyClientCallbackExecutor"));
         this.eventLoopGroupSelector = new NioEventLoopGroup(1, RemotingUtil.newThreadFactory("NettyClientSelector"));
         this.defaultEventExecutorGroup = new DefaultEventExecutorGroup(config.getWorkerThreads(), RemotingUtil.newThreadFactory("NettyClientWorker"));
+    }
+
+    public NettyRemotingClient(NettyClientConfig config) {
+        this(config, null);
     }
 
     private void prepareSharableHandlers() {
@@ -149,37 +153,31 @@ public class NettyRemotingClient extends NettyRemotingAbstract implements Remoti
     }
 
     @Override
-    public void login(@NonNull String token, @NonNull String login, long timeoutMillis, ResultCallback<RemotingCommand> callback) {
+    public RemotingCommand connect(@NonNull String token, @NonNull String login, long timeoutMillis) {
         setup();
 
         try {
             this.channel = createChannel();
-            RemotingCommand response = invokeSync(RemotingCommand.request(RemotingSystemCode.AUTHENTICATION,
+            return invokeSync(RemotingCommand.request(RemotingSystemCode.AUTHENTICATION,
                     Any.pack(new AuthenticationToken().setToken(token).setLogin(login))), timeoutMillis);
-
-            if (response.success()) {
-                callback.onSuccess(response);
-            } else {
-                callback.onFailure(new ErrorInfo(response.getReqId(), response.getCode(), response.getMessage()));
-            }
         } catch (RemotingConnectException e) {
-            callback.onFailure(new ErrorInfo(-1, RemotingSystemCode.REQUEST_FAILED, e));
+            return RemotingCommand.failure(-1, RemotingSystemCode.REQUEST_FAILED, RemotingUtil.exceptionSimpleDesc(e));
         } catch (Exception e) {
-            callback.onFailure(new ErrorInfo(-1, RemotingSystemCode.SYSTEM_ERROR, e));
+            return RemotingCommand.failure(-1, RemotingSystemCode.SYSTEM_ERROR, RemotingUtil.exceptionSimpleDesc(e));
         }
     }
 
     @Override
-    public void logout(ResultCallback<Void> callback) {
+    public void disconnect() {
         try {
             RemotingCommand response = invokeSync(RemotingCommand.request(RemotingSystemCode.AUTHENTICATION, null), 3000);
             if (response.success()) {
-                callback.onSuccess(null);
+                shutdown();
             } else {
-                callback.onFailure(new ErrorInfo(-1, response.getCode(), response.getMessage()));
+                throw new RemotingRuntimeException("Logout failure, exception code: " + response.getCode() + ", message: " + response.getMessage());
             }
         } catch (Exception e) {
-            callback.onFailure(new ErrorInfo(-1, RemotingSystemCode.REQUEST_FAILED, e.getMessage()));
+            throw new RemotingRuntimeException("Logout failure, exception " + RemotingUtil.exceptionSimpleDesc(e));
         }
     }
 

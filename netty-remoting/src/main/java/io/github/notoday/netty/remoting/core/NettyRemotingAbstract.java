@@ -68,11 +68,11 @@ public abstract class NettyRemotingAbstract {
      */
     public abstract ExecutorService getCallbackExecutor();
 
-    public void registerProcessor(final int requestCode, final NettyRequestProcessor processor, final ExecutorService executor) {
+    public void registerProcessor(final int requestCode, final ExecutorService executor, final NettyRequestProcessor processor) {
         this.processorTable.put(requestCode, new Pair<>(processor, executor));
     }
 
-    public void registerDefaultProcessor(final NettyRequestProcessor processor, final ExecutorService executor) {
+    public void registerDefaultProcessor(final ExecutorService executor, final NettyRequestProcessor processor) {
         this.defaultRequestProcessor = new Pair<>(processor, executor);
     }
 
@@ -228,7 +228,7 @@ public abstract class NettyRemotingAbstract {
     /**
      * 扫描已经超时的请求, 并进行回调通知
      */
-    public void scanResponseTable() {
+    protected void scanResponseTable() {
         List<ResponseFuture> rfList = new LinkedList<>();
         Iterator<Map.Entry<Integer, ResponseFuture>> it = responseTable.entrySet().iterator();
         while (it.hasNext()) {

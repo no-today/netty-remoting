@@ -13,22 +13,25 @@ import io.github.notoday.netty.remoting.protocol.RemotingCommand;
 public interface RemotingClient extends RemotingProcessable {
 
     /**
-     * 登陆(连接)
+     * 连接
      *
-     * @param login    用户标识
-     * @param token    身份密文
-     * @param callback 结果回调
+     * @param login 用户标识
+     * @param token 身份密文
      */
-    void login(String login, String token, long timeoutMillis, ResultCallback<RemotingCommand> callback);
+    RemotingCommand connect(String login, String token, long timeoutMillis);
 
-    default void login(String login, String token, ResultCallback<RemotingCommand> callback) {
-        login(login, token, 3000, callback);
+    default RemotingCommand connect(String login, String token) {
+        return connect(login, token, 3000);
+    }
+
+    default RemotingCommand connect(String login) {
+        return connect(login, "", 3000);
     }
 
     /**
-     * 登出(断开连接)
+     * 断开连接
      */
-    void logout(ResultCallback<Void> callback);
+    void disconnect();
 
     void shutdown();
 

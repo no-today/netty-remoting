@@ -17,5 +17,5 @@ public class NettySocketConfig {
     private int writeBufferLowWaterMark = NettySystemConfig.writeBufferLowWaterMarkValue;
     private int socketBacklog = NettySystemConfig.socketBacklog;
 
-    private boolean enableSSL = true;
+    private boolean enableSSL = false;
 }

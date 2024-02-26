@@ -42,7 +42,7 @@ public class NettyRemotingServerTest {
 
     @Test
     public void listening() throws Exception {
-        NettyRemotingServer server = new NettyRemotingServer(new NettyServerConfig(), null, null);
+        NettyRemotingServer server = new NettyRemotingServer(new NettyServerConfig());
         registerRequestProcessor(server, new AtomicBoolean(false), System.out::println);
 
         server.start();
@@ -53,7 +53,7 @@ public class NettyRemotingServerTest {
 
     @Test
     public void login() throws Exception {
-        NettyRemotingServer server = new NettyRemotingServer(new NettyServerConfig(), null, null);
+        NettyRemotingServer server = new NettyRemotingServer(new NettyServerConfig());
         registerRequestProcessor(server, new AtomicBoolean(false), null);
         server.start();
 
@@ -62,7 +62,8 @@ public class NettyRemotingServerTest {
         // not login throws exception
         assertThrows(RemotingConnectException.class, () -> client.invokeSync(RemotingCommand.request(0, null, null), 200));
 
-        client.login("", randomString(), callback);
+        RemotingCommand response = client.connect("", randomString());
+        assertTrue(response.success());
 
         // login success after, ok
         assertTrue(client.invokeSync(RemotingCommand.request(0, null, null), 200).success());
@@ -73,11 +74,12 @@ public class NettyRemotingServerTest {
 
     @Test
     public void sysErrors() throws Exception {
-        NettyRemotingServer server = new NettyRemotingServer(new NettyServerConfig(), null, null);
+        NettyRemotingServer server = new NettyRemotingServer(new NettyServerConfig());
         server.start();
 
-        NettyRemotingClient client = new NettyRemotingClient(new NettyClientConfig(), null);
-        client.login("", randomString(), callback);
+        NettyRemotingClient client = new NettyRemotingClient(new NettyClientConfig());
+        RemotingCommand response = client.connect("", randomString());
+        assertTrue(response.success());
 
         assertEquals(RemotingSystemCode.REQUEST_CODE_NOT_SUPPORTED, client.invokeSync(RemotingCommand.request(1024, Any.pack(randomString(10)), Map.of("random", randomString())), 200).getCode());
 
@@ -131,7 +133,7 @@ public class NettyRemotingServerTest {
     }
 
     private void registerRequestProcessor(RemotingProcessable server, AtomicBoolean rejectRequest, Consumer<RemotingCommand> consumer) {
-        server.registerDefaultProcessor(new NettyRequestProcessor() {
+        server.registerDefaultProcessor(Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors()), new NettyRequestProcessor() {
             @Override
             public boolean rejectRequest() {
                 return rejectRequest.get();
@@ -142,7 +144,7 @@ public class NettyRemotingServerTest {
                 if (consumer != null) consumer.accept(request);
                 return request.setCode(0);
             }
-        }, Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors()));
+        });
     }
 
     private String randomString() {
@@ -161,8 +163,8 @@ public class NettyRemotingServerTest {
     public void callClient() throws Exception {
         String login = "no-today";
 
-        NettyRemotingServer server = new NettyRemotingServer(new NettyServerConfig(), null, null);
-        NettyRemotingClient client = new NettyRemotingClient(new NettyClientConfig(), null);
+        NettyRemotingServer server = new NettyRemotingServer(new NettyServerConfig());
+        NettyRemotingClient client = new NettyRemotingClient(new NettyClientConfig());
 
         AtomicInteger requestCounter = new AtomicInteger(0);
         AtomicInteger onewayCounter = new AtomicInteger(0);
@@ -173,7 +175,8 @@ public class NettyRemotingServerTest {
         });
 
         server.start();
-        client.login("", login, callback);
+        RemotingCommand response = client.connect("", login);
+        assertTrue(response.success());
 
         int count = 10000;
         for (int i = 0; i < count; i++) {

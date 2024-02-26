@@ -13,7 +13,9 @@ public interface NettyRequestProcessor {
     /**
      * 拒绝请求
      */
-    boolean rejectRequest();
+    default boolean rejectRequest() {
+        return false;
+    }
 
     /**
      * 处理请求

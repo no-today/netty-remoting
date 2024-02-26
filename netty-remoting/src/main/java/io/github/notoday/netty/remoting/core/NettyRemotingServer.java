@@ -86,6 +86,10 @@ public class NettyRemotingServer extends NettyRemotingAbstract implements Remoti
         }
     }
 
+    public NettyRemotingServer(NettyServerConfig config) {
+        this(config, null, null);
+    }
+
     private boolean useEpoll() {
         return RemotingUtil.isLinuxPlatform() && Epoll.isAvailable();
     }
@@ -217,10 +221,14 @@ public class NettyRemotingServer extends NettyRemotingAbstract implements Remoti
         public void userEventTriggered(ChannelHandlerContext ctx, Object evt) throws Exception {
             super.userEventTriggered(ctx, evt);
 
-            if (evt instanceof AuthenticationEvent event) {
-                if (AuthenticationEvent.SUCCESS == event) {
+            if (evt instanceof AuthenticationEvent) {
+                if (AuthenticationEvent.SUCCESS == evt) {
                     String currentLogin = RemotingSecurityUtils.getCurrentLogin(ctx.channel());
-                    NettyRemotingServer.this.channelTable.put(currentLogin, ctx.channel());
+                    Channel older = NettyRemotingServer.this.channelTable.put(currentLogin, ctx.channel());
+                    if (older != null) {
+                        // The same user has connected multiple times, disconnecting older connections
+                        RemotingUtil.closeChannel(ctx.channel());
+                    }
                 }
             }
         }
@@ -231,4 +239,6 @@ public class NettyRemotingServer extends NettyRemotingAbstract implements Remoti
             NettyRemotingServer.this.channelTable.remove(RemotingSecurityUtils.getCurrentLogin(ctx.channel()));
         }
     }
+
+
 }

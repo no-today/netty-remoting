@@ -14,18 +14,18 @@ public interface RemotingProcessable {
      * 当根据请求码匹配不到处理器时, 会使用该处理器
      *
      * @param processor 默认处理器
-     * @param executor  默认处理器执行线程池
+     * @param executor  执行线程池
      */
-    void registerDefaultProcessor(NettyRequestProcessor processor, ExecutorService executor);
+    void registerDefaultProcessor(ExecutorService executor, NettyRequestProcessor processor);
 
     /**
      * 注册请求处理器
      *
      * @param requestCode 请求编码
+     * @param executor    执行线程池
      * @param processor   处理器
-     * @param executor    处理器执行线程池
      */
-    void registerProcessor(int requestCode, NettyRequestProcessor processor, ExecutorService executor);
+    void registerProcessor(int requestCode, ExecutorService executor, NettyRequestProcessor processor);
 
     /**
      * 注册RPC调用钩子
