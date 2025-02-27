@@ -19,6 +19,7 @@ public class OpenSslProvider {
             return SslContextBuilder.forServer(getResource("server.crt"), getResource("server.key.encrypted"))
                     .sslProvider(SslProvider.OPENSSL)
                     .clientAuth(ClientAuth.NONE)
+//                    .protocols("TLSv1.2")
                     .build();
         } catch (SSLException e) {
             throw new RuntimeException(e);

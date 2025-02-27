@@ -45,10 +45,14 @@ public class NettyRemotingServerTest {
         NettyRemotingServer server = new NettyRemotingServer(new NettyServerConfig());
         registerRequestProcessor(server, new AtomicBoolean(false), System.out::println);
 
-        server.start();
+        NettyRemotingClient client = new NettyRemotingClient(new NettyClientConfig());
 
-        TimeUnit.SECONDS.sleep(5);
+        server.start();
+        client.connect("", "no-today");
+
+        TimeUnit.SECONDS.sleep(3);
         server.shutdown();
+        client.shutdown();
     }
 
     @Test
