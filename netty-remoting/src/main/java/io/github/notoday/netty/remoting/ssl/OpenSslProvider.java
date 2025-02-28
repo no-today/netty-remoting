@@ -7,6 +7,7 @@ import io.netty.handler.ssl.SslProvider;
 
 import javax.net.ssl.SSLException;
 import java.io.InputStream;
+import java.util.Collections;
 
 /**
  * @author no-today
@@ -20,6 +21,7 @@ public class OpenSslProvider {
                     .sslProvider(SslProvider.OPENSSL)
                     .clientAuth(ClientAuth.NONE)
 //                    .protocols("TLSv1.2")
+//                    .ciphers(Collections.singleton("TLS_RSA_WITH_AES_128_GCM_SHA256"))
                     .build();
         } catch (SSLException e) {
             throw new RuntimeException(e);
